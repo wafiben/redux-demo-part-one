@@ -1,22 +1,11 @@
-import { useDispatch } from "react-redux";
-import { increment, decrement } from "./Redux/Action";
-import { useSelector } from "react-redux";
-import Home from "./Home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import List from "./Components/List";
+import Add from "./Components/Add";
 function App() {
-  const count = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    dispatch(increment());
-  };
-  const handleDecrement = () => {
-    dispatch(decrement());
-  };
   return (
     <div>
-      <button onClick={handleClick}>+</button>
-      <Home />
-      <h1>{count}</h1>
-      <button onClick={handleDecrement}>-</button>
+      <Add />
+      <List />
     </div>
   );
 }
